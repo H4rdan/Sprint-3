@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style-card.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&family=Space+Grotesk:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main class="container">
+        <img class="fimg" src="./interactive-card-form/imágenes/bg-card-front.png" alt="">
+        <img class="simg" src="./interactive-card-form/imágenes/bg-card-back.png" alt="">
+    </main>
+    <div class="containerDos">
+        <form id="formCard">
+            <label>CARDHOLDER NAME</label>
+            <input id="cardName" type="text" />
+            <label for="">CARD NUMBER</label>
+            <input id="cardNumber" type="number" />
+            <label class="medium-flex" for="">EXP.DATE (MM/YY)</label>
+            <label class="medium-flex">CVC</label>
+            <input id="expDate1" class="small-flex" type="number" />
+            <input id="expDate2" class="small-flex" type="number" />
+            <input id="cvc" class="medium-flex" type="number" />
+            <button type="submit">Confirm</button>
+        </form>
+    </div>
+    <script>
+        const formCard = document.getElementById("formCard");
+        const cardName = document.getElementById("cardName");
+        const cardNumber = document.getElementById("cardNumber");
+        const expDate1 = document.getElementById("expDate1");
+        const expDate2 = document.getElementById("expDate2");
+        const cvc = document.getElementById("cvc");
+
+        formCard.addEventListener("submit", function (event) {
+            event.preventDefault();
+            if (cardName.value && cardNumber.value && expDate1.value && expDate2.value && cvc.value) {
+                alert("Todos los campos están llenos");
+                return;
+            } else { alert("Llena todos los campos") }
+        })
+
+    </script>
+</body>
+
+</html>
